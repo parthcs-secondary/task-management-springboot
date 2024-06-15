@@ -3,6 +3,7 @@ package com.taskmanagement.task.model;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Tasks {
@@ -18,6 +19,9 @@ public class Tasks {
     private Users assigned_to;
     private String status;
     private Date due_date;
+
+    @OneToMany(mappedBy = "task")
+    private List<Notification> notification;
 
     public int getId() {
         return id;

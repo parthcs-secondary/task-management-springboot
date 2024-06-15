@@ -49,4 +49,11 @@ public class TaskController {
         return taskService.createTask(task);
     }
 
+    @PostMapping("update/{id}")
+    public Tasks updateTask(@PathVariable int id, @RequestBody Tasks task){
+
+        return taskService.updateTask(id, task);
+
+    }
+
 }
